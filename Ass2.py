@@ -34,14 +34,11 @@ cube = num ** 3
 print("Square of the number:", square)
 print("Cube of the number:", cube)
 
-# Take input from the user
 num = int(input("Enter a number: "))
 
-# Calculate square and cube
 square = num ** 2
 cube = num ** 3
 
-# Display results
 print("Square of the number:", square)
 print("Cube of the number:", cube)
 
@@ -108,5 +105,6 @@ remainder = num1 % num2
 
 print("Quotient:",quotient)
 print("Remainder:",remainder)
+
 
 
