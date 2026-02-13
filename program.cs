@@ -1,107 +1,94 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
-class StudentDetails
+class Student
 {
-    public int student_id;
-    public string name = "";
-    public string department = "";
-    public int marks;
+    // Encapsulation (Properties)
+    public int StudentId { get; set; }
+    public string Name { get; set; }
+    public string Department { get; set; }
+    public int Year { get; set; }
+    public int Marks { get; set; }
+
+    // Constructor
+    public Student(int id, string name, string dept, int year, int marks)
+    {
+        StudentId = id;
+        Name = name;
+        Department = dept;
+        Year = year;
+        Marks = marks;
+    }
+
+    // Method to display student info
+    public void Display()
+    {
+        Console.WriteLine($"{StudentId} | {Name} | {Department} | Year {Year} | Marks: {Marks}");
+    }
 }
 
-class Program
+class Program2
 {
     static void Main(string[] args)
     {
+        List<Student> students = new List<Student>();
+
         Console.Write("Enter number of students: ");
         int n = int.Parse(Console.ReadLine() ?? "0");
 
-        StudentDetails[] students = new StudentDetails[n];
-
-        // 1️⃣ Accept student details
+        // Create multiple student objects
         for (int i = 0; i < n; i++)
         {
-            students[i] = new StudentDetails();
-
-            Console.WriteLine("\nEnter details for Student " + (i + 1));
+            Console.WriteLine($"\nEnter details for Student {i + 1}");
 
             Console.Write("Student ID: ");
-            students[i].student_id = int.Parse(Console.ReadLine() ?? "0");
+            int id = int.Parse(Console.ReadLine() ?? "0");
 
             Console.Write("Name: ");
-            students[i].name = Console.ReadLine() ?? "";
+            string name = Console.ReadLine() ?? "";
 
             Console.Write("Department: ");
-            students[i].department = Console.ReadLine() ?? "";
+            string dept = Console.ReadLine() ?? "";
+
+            Console.Write("Year: ");
+            int year = int.Parse(Console.ReadLine() ?? "0");
 
             Console.Write("Marks: ");
-            students[i].marks = int.Parse(Console.ReadLine() ?? "0");
+            int marks = int.Parse(Console.ReadLine() ?? "0");
+
+            students.Add(new Student(id, name, dept, year, marks));
         }
 
-        // 2️⃣ Display all student records
+        // 5️⃣ Display all records
         Console.WriteLine("\n--- All Student Records ---");
-        for (int i = 0; i < n; i++)
+        foreach (var s in students)
         {
-            Console.WriteLine(students[i].student_id + " | " +
-                              students[i].name + " | " +
-                              students[i].department + " | " +
-                              students[i].marks);
+            s.Display();
         }
 
-        // 3️⃣ Display only name and department
-        Console.WriteLine("\n--- Name and Department ---");
-        for (int i = 0; i < n; i++)
-        {
-            Console.WriteLine(students[i].name + " - " + students[i].department);
-        }
-
-        // 4️⃣ Students with marks > 75
+        // 6️⃣ Students with marks > 75
         Console.WriteLine("\n--- Students with Marks > 75 ---");
-        for (int i = 0; i < n; i++)
+        var highScorers = students.Where(s => s.Marks > 75);
+        foreach (var s in highScorers)
         {
-            if (students[i].marks > 75)
-            {
-                Console.WriteLine(students[i].name + " - " + students[i].marks);
-            }
+            s.Display();
         }
 
-        // 5️⃣ Students from specific department
-        Console.Write("\nEnter department to search: ");
-        string deptSearch = Console.ReadLine() ?? "";
-
-        Console.WriteLine("--- Students from " + deptSearch + " Department ---");
-        for (int i = 0; i < n; i++)
-        {
-            if (students[i].department.ToLower() == deptSearch.ToLower())
-            {
-                Console.WriteLine(students[i].name + " - " + students[i].marks);
-            }
-        }
-
-        // 6️⃣ Sort students by marks (Descending)
-        for (int i = 0; i < n - 1; i++)
-        {
-            for (int j = i + 1; j < n; j++)
-            {
-                if (students[i].marks < students[j].marks)
-                {
-                    StudentDetails temp = students[i];
-                    students[i] = students[j];
-                    students[j] = temp;
-                }
-            }
-        }
+        // 7️⃣ Sort students by marks (Descending)
+        var sortedStudents = students.OrderByDescending(s => s.Marks).ToList();
 
         Console.WriteLine("\n--- Students Sorted by Marks (Descending) ---");
-        for (int i = 0; i < n; i++)
+        foreach (var s in sortedStudents)
         {
-            Console.WriteLine(students[i].name + " - " + students[i].marks);
+            s.Display();
         }
 
-        // 7️⃣ Top Scorer
-        if (n > 0)
+        // 8️⃣ Top 3 Scorers
+        Console.WriteLine("\n--- Top 3 Scorers ---");
+        foreach (var s in sortedStudents.Take(3))
         {
-            Console.WriteLine("\n--- Top Scorer ---");
-            Console.WriteLine(students[0].name + " with " + students[0].marks + " marks");
+            s.Display();
         }
 
         Console.ReadLine();
