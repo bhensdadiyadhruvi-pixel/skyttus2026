@@ -1,0 +1,11 @@
+@model ass8.Models.Student
+
+<h2>Add Student</h2>
+
+<form asp-action="Create">
+    <input asp-for="Name" placeholder="Name" />
+    <input asp-for="Department" placeholder="Department" />
+    <input asp-for="Year" placeholder="Year" />
+    <input asp-for="Marks" placeholder="Marks" />
+    <button type="submit">Save</button>
+</form>

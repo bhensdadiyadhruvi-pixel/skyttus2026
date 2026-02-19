@@ -1,0 +1,14 @@
+C:\Users\Hp\Desktop\.NET\studentApp\bin\Debug\net10.0\StudentApp.exe
+C:\Users\Hp\Desktop\.NET\studentApp\bin\Debug\net10.0\StudentApp.deps.json
+C:\Users\Hp\Desktop\.NET\studentApp\bin\Debug\net10.0\StudentApp.runtimeconfig.json
+C:\Users\Hp\Desktop\.NET\studentApp\bin\Debug\net10.0\StudentApp.dll
+C:\Users\Hp\Desktop\.NET\studentApp\bin\Debug\net10.0\StudentApp.pdb
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.AssemblyInfoInputs.cache
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.AssemblyInfo.cs
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.dll
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\refint\StudentApp.dll
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.pdb
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\StudentApp.genruntimeconfig.cache
+C:\Users\Hp\Desktop\.NET\studentApp\obj\Debug\net10.0\ref\StudentApp.dll
